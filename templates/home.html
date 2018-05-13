@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+    <title>WRDS Data Model</title>
+
+    <div id="table-select-text">
+        Please select the vendor and library of your choice below, 
+        then choose which table you would like to see.
+
+        Or, use query feature to perform custom searches.
+    </div>
+
+    <div class="dropdown">
+        <label for="library">Library</label>
+        <select id="library">
+            <option></option>
+        </select>
+    </div>
+
+    <div class="dropdown">
+        <label for="table">Table</label>
+        <select id="table">
+            <option></option>
+        </select>
+    </div>
+
+    <div id="table-select"></div>
+
+    <div id="query-feature">
+        <label for="query">Enter query here</label>
+        <input type="text" id="query-input" placeholder="SELECT * FROM djones.djdaily LIMIT 10;"/>
+        <div id="submit" class="button">test</div>
+    </div>
+
+    <div class="row-3">
+        <p id="dataLoading" class="text-center text-muted">
+            Loading ...
+        </p>
+
+        <div class="table-responsive" id="dataTable">
+            <table class="table-responsive table-condensed table-hover">
+                <thread>
+                    <tr>
+                        <th>Temp Header 1</th>
+                        <th>Temp Header 2</th>
+                        <th>Temp Header 3</th>
+                        <th>Temp Header 4</th>
+                        <th>Temp Header 5</th>
+                    </tr>
+                </thread>
+                <tbody id="dataTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+		
+	<script src="{{url_for('static', filename='js/base.js')}}"></script>
+	<script src="{{url_for('static', filename='js/home.js')}}"></script>
+{% endblock %}

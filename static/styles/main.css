@@ -1,0 +1,45 @@
+body {
+    font-family: "Open Sans", sans-serif;
+    background-color: #fff;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+#main-container {
+    width: 1140px;
+    margin: 195px auto 10px;
+    position: relative;
+    height: 100%;
+    display: block;
+}
+
+.button {
+    border-color: #009fee;
+    border-radius: 25px;
+    background-color: #009fee;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    border-style: solid;
+    margin: 15px;
+}
+
+#submit {
+    float: left;
+}
+
+@media (max-width: 750px) {
+    body {
+        transform-origin: top left;
+        font-size: 22px;
+    }
+
+    #main-container {
+        width: 600px;
+        margin: 0 auto !important;
+        padding: 20px;
+        overflow-x: hidden;
+    }
+}
