@@ -13,6 +13,50 @@ body {
     display: block;
 }
 
+#footer {
+    width: 1140px;
+    margin: 195px auto 10px;
+    position: relative;
+    height: 100%;
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+.form-row {
+    clear: both;
+    width: 800px;
+    height: 75px;
+}
+
+.home-1x {
+    width: 100px;
+}
+
+.home-2x {
+    width: 150px;
+}
+
+.home-3x {
+    width: 200px;
+}
+
+.home-4x {
+    width: 310px;
+}
+
+.home-5x {
+    width: 600px;
+}
+
+.home-1x, .home-2x, .home-3x,
+.home-4x, homne-5x {
+    float: left;
+    margin-right: 10px;
+}
+
 .button {
     border-color: #009fee;
     border-radius: 25px;
@@ -26,8 +70,12 @@ body {
     margin: 15px;
 }
 
+#query-input {
+    width: 300px;
+}
+
 #submit {
-    float: left;
+
 }
 
 @media (max-width: 750px) {

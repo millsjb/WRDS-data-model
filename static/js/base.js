@@ -8,19 +8,35 @@ function addDropDownOptions($select, options) {
 
 function updateTable(data) {
     $("#dataLoading").hide();
-    var all_data = ["1", "2", "3", "4", "5"];
-  //  if (all_data.length == 0) return;
+    if (data.length == 0) return;
 
-    var data = [];
-    var varName = "temp val"; // temp val
-    _.each(all_data, function (a) {
-        data.push("<tr><td>" + varName + "</td>"
-            + "<td>" + varName + "</td>"
-            + "<td>" + varName + "</td>"
-            + "<td>" + varName + "</td>"
-            + "<td>" + varName + "</td>"
-            + "<td>" + varName + "</td>");
+    table = [];
+
+    table.push("<tr><th>index</th>");
+
+    _.each(Object.keys(data), function (key) {
+        table.push("<th>" + key + "</th>");
     });
 
-    $("#dataTableBody").html(data.join(""));
+    table.push("</th>");
+
+    // add all data in a row, one row at a time
+    // use index to iterate through the row data
+
+    _.each(data['index'], function (index) {
+        table.push("<td>");
+        _.each(Object.keys(data), function (key) {
+            table.push("<td>" + data.key.index + "</td>");
+            console.log("val: " + data.key.index);
+        });
+        table.push("</td>");
+    });
+
+    table.push("</tr>");
+
+    console.table(data);
+    console.log(data);
+
+    $("#dataTableBody").html(table.join(""));
+    $("#dataTable").show();
 }

@@ -7,6 +7,8 @@ from _operator import itemgetter
 from operator import itemgetter
 import accessor
 import json
+import pandas as pd
+import numpy as np
 
 env = Environment(autoescape=select_autoescape(['html', 'xml']),
                   loader=jinja2.FileSystemLoader( dirname(__file__) + "/templates/" ))
@@ -40,14 +42,19 @@ def getTablesForLibrary(library):
 @app.route("/wrds-data-model/get_table_data")
 def getTableData():
     data = None
+    tableList = []
     library = request.args.get('library', None)
     table = request.args.get('table', None)
 
     data = accessor.getTableData(library, table)
 
-    print(data)
+#    tableList.append(list(data))
 
-    return "test"
+ #   print("column headers: " + str(list(data)));
+
+    tableList.append(data[data.columns[2:4]])
+
+    return data.to_json()
 
 @app.route("/wrds-data-model/get_table_data/<query>")
 def getQueryResults(query):

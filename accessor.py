@@ -4,8 +4,8 @@ import wrds
 def getConnection():
     return wrds.Connection(wrds_username = 'kleiwc15');
 
-def closeConnection(conn):
-    putConn(conn);
+def closeConnection():
+    #putConn(conn);
     return
 
 def getAllLibraries():
@@ -13,7 +13,7 @@ def getAllLibraries():
 
     libraries = conn.list_libraries()
 
-    closeConnection(conn)
+    closeConnection()
         
     return libraries
 

@@ -11,11 +11,10 @@ $(document).ready(function() {
     });
 
     $("#table").on("change", function () {
-        console.log("here");
+        $("#dataLoading").show();
         $.get("/wrds-data-model/get_table_data?library=" + $("#library").val() + "&table="
-            + $("#table").val(), function (data, success) {
-            updateTable();
-            addDropDownOptions($("#table"), JSON.parse(data));
+                + $("#table").val(), function (data, success) {
+            updateTable(JSON.parse(data));
         });
     });
 
