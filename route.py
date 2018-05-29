@@ -56,12 +56,16 @@ def getTableData():
 
     return data.to_json()
 
-@app.route("/wrds-data-model/get_table_data/<query>")
-def getQueryResults(query):
+@app.route("/wrds-data-model/get_query_results")
+def getQueryResults():
     data = None
+    tableList = []
+    query = request.args.get('query', None)
+
+    print("here")
 
     data = accessor.executeQuery(query)
 
-    print(data)
+    tableList.append(data[data.columns])
 
-    return json.dumps(data)
+    return data.to_json()

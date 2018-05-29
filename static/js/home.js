@@ -19,7 +19,8 @@ $(document).ready(function() {
     });
 
     $("#submit").on("click", function () {
-        $.get("/wrds-data-model/get_table_Data/" + $("#query-input").val(), function (data, success) {
+        $.get("/wrds-data-model/get_query_results?query=" + $("#query-input").val(), function (data, success) {
+            console.log(data);
             updateTable(JSON.parse(data));
         });
     });

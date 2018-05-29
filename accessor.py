@@ -36,7 +36,9 @@ def getTableData(library, table):
     return data
 
 def executeQuery(query):
-    conn = getConenction()
+    conn = getConnection()
+
+    print(query)
 
     data = conn.raw_sql(query)
 

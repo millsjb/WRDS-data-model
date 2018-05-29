@@ -23,9 +23,9 @@ function updateTable(data) {
     // add all data in a row, one row at a time
     // use index to iterate through the row data
 
-    _.each(data['index'], function (index) {
+    _.each(data, function (key) {
         table.push("<td>");
-        _.each(Object.keys(data), function (key) {
+        _.each(Object.values(key), function (val) {
             table.push("<td>" + data.key.index + "</td>");
             console.log("val: " + data.key.index);
         });
